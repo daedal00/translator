@@ -1,0 +1,14 @@
+[Unit]
+Description=Sermon Translator Backend
+After=network.target
+
+[Service]
+User=samuel
+WorkingDirectory=/home/samuel/Code/translator/backend
+ExecStart=/usr/bin/uv run uvicorn app.main:app --host 127.0.0.1 --port 8000
+Restart=on-failure
+RestartSec=5
+EnvironmentFile=/home/samuel/Code/translator/backend/.env
+
+[Install]
+WantedBy=multi-user.target
