@@ -1,5 +1,3 @@
-import time
-
 import jwt
 import pytest
 from app.core.security import (
